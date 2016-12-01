@@ -7,7 +7,8 @@ import android.widget.ListView;
 
 public class HillsActivity extends AppCompatActivity {
     String[] testArray = {"FUCK","ANDROID","STUDIO","KILL",
-            "IT","WITH","FIRE","!!!!!!"};
+            "IT","WITH","FIRE","!!!!!!","hill 1","hill 2","hill 3","hill 4","hill 5","hill 6","hill 7",
+            "hill 8","hill 9","hill 10","hill 11","hill 12","hill 13","hill 14","hill 15","hill 16","hill 17",};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
