@@ -31,16 +31,29 @@
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:text="TextView"
+    <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/result"
-        android:layout_toStartOf="@+id/result"
-        android:layout_marginRight="23dp"
-        android:layout_marginEnd="23dp"
-        android:layout_marginBottom="204dp"
-        android:id="@+id/Runs" />
+        android:layout_alignRight="@+id/result"
+        android:layout_alignEnd="@+id/result"
+        android:layout_marginBottom="63dp"
+        android:id="@+id/run" />
+
+    <Button
+        android:text="Hills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/run"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="55dp"
+        android:id="@+id/button2"
+        android:onClick="openHills" />
 
 </RelativeLayout>

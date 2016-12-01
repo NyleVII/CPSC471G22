@@ -6,6 +6,7 @@ Manmeet Dhaliwal
 package com.example.ark.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,35 +44,37 @@ public class MainActivity extends AppCompatActivity {
         conn = connectionclass(un, pass, db, ip);
 
         TextView t1 = (TextView)findViewById(R.id.result);
+        TextView run = (TextView)findViewById(R.id.run);
         if(conn == null){
             t1.setText("No");
-        }else{
+        }else {
             t1.setText("Yes");
+        }
 
             try {
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following
-                String query = "SELECT Name " + db + "FROM Runs as r WHERE r.Hill_ID=1";
+                String query = "SELECT name FROM" + db + "Ski Hill";
                 Statement stmt = conn.createStatement();
                 ResultSet rs =  stmt.executeQuery(query);
 
                 int i = 0;
-                String[] runs;
+                String[] runs = new String[10];
 
                 while (rs.next()){
-                    String name = rs.getString("Name");
+                    String Name = rs.getString("name");
 
-                    runs[++i] = name;
+                    runs[++i] = Name;
 
                 }
-
+                run.setText(runs[1]);
 
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-    }
+
 
     //connection class
     @SuppressLint("NewApi")
@@ -91,5 +94,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return connection;
+    }
+
+    public void openHills(View view) {
+        Intent intent = new Intent(this, HillsActivity.class);
+        startActivity(intent);
     }
 }
