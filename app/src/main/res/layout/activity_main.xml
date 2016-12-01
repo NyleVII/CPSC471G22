@@ -10,11 +10,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.ark.myapplication.MainActivity">
 
-    <TextView
+    <Button
+        android:text="Connection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView" />
+        android:layout_marginTop="32dp"
+        android:id="@+id/button"
+        android:onClick="onButtonClickConnect"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -22,22 +26,9 @@
         android:inputType="textPersonName"
         android:text="Connected?"
         android:ems="10"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="70dp"
         android:id="@+id/result"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
-
-    <Button
-        android:text="Connection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="29dp"
-        android:id="@+id/button"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView"
-        android:onClick="onButtonClickConnect" />
 
 </RelativeLayout>
