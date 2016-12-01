@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -51,9 +52,21 @@ public class MainActivity extends AppCompatActivity {
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following
-                String query = "INSERT INTO " + db + ".dbo.names VALUES ('John');";
+                String query = "SELECT Name " + db + "FROM Runs as r WHERE r.Hill_ID=1";
                 Statement stmt = conn.createStatement();
-                stmt.execute(query);
+                ResultSet rs =  stmt.executeQuery(query);
+
+                int i = 0;
+                String[] runs;
+
+                while (rs.next()){
+                    String name = rs.getString("Name");
+
+                    runs[++i] = name;
+
+                }
+
+
             } catch (SQLException e) {
                 e.printStackTrace();
             }
