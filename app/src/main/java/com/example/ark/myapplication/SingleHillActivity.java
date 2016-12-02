@@ -1,16 +1,20 @@
 package com.example.ark.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class SingleHillActivity extends AppCompatActivity {
     String hillName, db, snowPack;
+    int hill_id;
     Connection conn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,9 @@ public class SingleHillActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         hillName = extras.getString("hillName");
+        hill_id = extras.getInt("Hill_ID");
+
+
         try {
             String query = "SELECT name, SnowPack FROM " + db + ".dbo.SkiHill WHERE name='" + hillName + "'";
             Statement stmt = conn.createStatement();
@@ -36,5 +43,34 @@ public class SingleHillActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    public void openRegions(View view){
+        ArrayList<String> regions = new ArrayList<String>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT name FROM " + db + ".dbo.Regions WHERE Hill_ID=" + hill_id;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String Name = rs.getString("name");
+
+                regions.add(Name);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        Intent intent = new Intent(this, RegionsActivity.class);
+        intent.putExtra("regions", regions);
+        startActivity(intent);
     }
 }

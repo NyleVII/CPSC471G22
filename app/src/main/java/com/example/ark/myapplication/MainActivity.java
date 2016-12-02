@@ -98,20 +98,22 @@ public class MainActivity extends AppCompatActivity{
     public void openHills(View view) {
 
         ArrayList<String> hills = new ArrayList<String>(); //hills array for sending to the hills activity
+        ArrayList<Integer> hill_ids = new ArrayList<Integer>(); //hill_id array for sending to the hills activity
 
         try {
             //Inserting into the database with db = database name
             //dbo.names is the table name
             //standard format for accessing the sql server provided through Tamer is the following
-            String query = "SELECT name FROM " + db + ".dbo.SkiHill";
+            String query = "SELECT name, Hill_ID FROM " + db + ".dbo.SkiHill";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
             int i = 0;
             while (rs.next()) {
                 String Name = rs.getString("name");
-
+                Integer Id = rs.getInt("Hill_ID");
                 hills.add(Name);
+                hill_ids.add(Id);
 
             }
 
@@ -122,6 +124,7 @@ public class MainActivity extends AppCompatActivity{
 
         Intent intent = new Intent(this, HillsActivity.class);
         intent.putExtra("hills", hills);
+        intent.putExtra("Hill_IDs", hill_ids);
         startActivity(intent);
     }
 
