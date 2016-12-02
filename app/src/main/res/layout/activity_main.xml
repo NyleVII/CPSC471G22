@@ -11,23 +11,12 @@
     tools:context="com.example.ark.myapplication.MainActivity">
 
     <Button
-        android:text="Connection"
+        android:text="Hills"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:id="@+id/button"
-        android:onClick="onButtonClickConnect"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Connected?"
-        android:ems="10"
-        android:layout_marginTop="70dp"
-        android:id="@+id/result"
+        android:id="@+id/button2"
+        android:onClick="openHills"
+        android:layout_marginTop="90dp"
         android:layout_below="@+id/button"
         android:layout_centerHorizontal="true" />
 
@@ -35,25 +24,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text="Connecting..."
         android:ems="10"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/result"
-        android:layout_alignEnd="@+id/result"
-        android:layout_marginBottom="63dp"
-        android:id="@+id/run" />
-
-    <Button
-        android:text="Hills"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/run"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginBottom="55dp"
-        android:id="@+id/button2"
-        android:onClick="openHills" />
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignEnd="@+id/button2"
+        android:id="@+id/result" />
 
 </RelativeLayout>

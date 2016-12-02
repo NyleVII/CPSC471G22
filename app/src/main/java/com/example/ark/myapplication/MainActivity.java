@@ -23,9 +23,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    Connection conn;
+    public Connection conn;
     String un, pass, db, ip;
-    ArrayList<String> hills = new ArrayList<String>(); //hills array for sending to the hills activity
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,42 +39,15 @@ public class MainActivity extends AppCompatActivity {
         un = "CPSC471_Fall2016_G22";    //enter username here
         pass = "6VXVM_0~rq1F-$W";  //enter password here
 
-    }
-
-    //Make sure to link the method to the button using the activity_main.xml file, click on the button, go to properties
-    //and add this method under "onClick" property
-    public void onButtonClickConnect(View v){
         conn = connectionclass(un, pass, db, ip);
 
-        TextView t1 = (TextView)findViewById(R.id.result);
-        TextView run = (TextView)findViewById(R.id.run);
-        if(conn == null){
+        TextView t1 = (TextView) findViewById(R.id.result);
+        if (conn == null) {
             t1.setText("No");
-        }else {
+        } else {
             t1.setText("Yes");
         }
-
-            try {
-                //Inserting into the database with db = database name
-                //dbo.names is the table name
-                //standard format for accessing the sql server provided through Tamer is the following
-                String query = "SELECT name FROM " + db + ".dbo.SkiHill";
-                Statement stmt = conn.createStatement();
-                ResultSet rs =  stmt.executeQuery(query);
-
-                int i = 0;
-                while (rs.next()){
-                    String Name = rs.getString("name");
-
-                    hills.add(Name);
-
-                }
-                run.setText(hills.get(0));
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+    }
 
 
     //connection class
@@ -98,6 +71,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openHills(View view) {
+
+        ArrayList<String> hills = new ArrayList<String>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT name FROM " + db + ".dbo.SkiHill";
+            Statement stmt = conn.createStatement();
+            ResultSet rs =  stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String Name = rs.getString("name");
+
+                hills.add(Name);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
         Intent intent = new Intent(this, HillsActivity.class);
         intent.putExtra("hills", hills);
         startActivity(intent);
