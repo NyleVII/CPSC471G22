@@ -19,11 +19,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     Connection conn;
     String un, pass, db, ip;
+    ArrayList<String> hills = new ArrayList<String>(); //hills array for sending to the hills activity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         db = "CPSC471_Fall2016_G22";    //enter database name here
         un = "CPSC471_Fall2016_G22";    //enter username here
         pass = "6VXVM_0~rq1F-$W";  //enter password here
+
     }
 
     //Make sure to link the method to the button using the activity_main.xml file, click on the button, go to properties
@@ -55,20 +58,18 @@ public class MainActivity extends AppCompatActivity {
                 //Inserting into the database with db = database name
                 //dbo.names is the table name
                 //standard format for accessing the sql server provided through Tamer is the following
-                String query = "SELECT name FROM" + db + "Ski Hill";
+                String query = "SELECT name FROM " + db + ".dbo.SkiHill";
                 Statement stmt = conn.createStatement();
                 ResultSet rs =  stmt.executeQuery(query);
 
                 int i = 0;
-                String[] runs = new String[10];
-
                 while (rs.next()){
                     String Name = rs.getString("name");
 
-                    runs[++i] = Name;
+                    hills.add(Name);
 
                 }
-                run.setText(runs[1]);
+                run.setText(hills.get(0));
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -98,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void openHills(View view) {
         Intent intent = new Intent(this, HillsActivity.class);
+        intent.putExtra("hills", hills);
         startActivity(intent);
     }
 }
