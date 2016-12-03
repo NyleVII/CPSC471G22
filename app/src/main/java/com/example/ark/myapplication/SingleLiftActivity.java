@@ -9,8 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 
 public class SingleLiftActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
-
+        int i;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_lift);
+
         }
 }
