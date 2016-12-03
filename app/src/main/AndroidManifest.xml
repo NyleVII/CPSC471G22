@@ -29,6 +29,8 @@
 
         <activity android:name=".RegionsActivity" />
         <activity android:name=".SingleRegionActivity"></activity>
+        <activity android:name=".LiftsActivity"></activity>
+        <activity android:name=".SingleLiftActivity"></activity>
     </application>
 
 </manifest>

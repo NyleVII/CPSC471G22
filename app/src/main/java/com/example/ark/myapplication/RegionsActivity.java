@@ -16,6 +16,7 @@ import static com.example.ark.myapplication.R.id.regionsList;
 
 public class RegionsActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class RegionsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         ArrayList<String> regions = extras.getStringArrayList("regions");
+        final int hill_id = extras.getInt("Hill_ID");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.regions_list, regions);
 
@@ -35,6 +37,7 @@ public class RegionsActivity extends AppCompatActivity {
                 Intent intent = new Intent(RegionsActivity.this,SingleRegionActivity.class);
                 String regionName = ((TextView)view).getText().toString();
                 intent.putExtra("Region",regionName);
+                intent.putExtra("Hill_ID",hill_id);
                 startActivity(intent);
             }
         });

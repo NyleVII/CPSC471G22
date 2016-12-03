@@ -21,4 +21,46 @@
         android:textStyle="normal|bold"
         android:textSize="22sp"
         android:textColor="#000000" />
+
+    <TextView
+        android:text="Weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="49dp"
+        android:id="@+id/textView3"
+        android:textSize="22sp"
+        android:textStyle="normal|bold"
+        android:textColor="#000000"
+        android:layout_below="@+id/region"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Namew"
+        android:ems="10"
+        android:id="@+id/weather"
+        android:layout_marginRight="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:text="Lifts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="122dp"
+        android:id="@+id/button3"
+        android:onClick="openLifts"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginLeft="13dp"
+        android:layout_marginStart="13dp" />
 </RelativeLayout>

@@ -71,6 +71,7 @@ public class SingleHillActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, RegionsActivity.class);
         intent.putExtra("regions", regions);
+        intent.putExtra("Hill_ID",hill_id);
         startActivity(intent);
     }
 }
