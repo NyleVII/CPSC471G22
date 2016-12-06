@@ -7,10 +7,64 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:id="@+id/textView4"
+        android:id="@+id/lift"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:textStyle="normal|bold"
         android:textSize="22sp"
         android:textColor="#000000" />
+
+    <TextView
+        android:text="Type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="33dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="55dp"
+        android:id="@+id/textView3"
+        android:textSize="22sp"
+        android:textStyle="normal|bold"
+        android:textColor="#000000"
+        android:layout_below="@+id/lift"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Capacity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:textSize="22sp"
+        android:textStyle="normal|bold"
+        android:textColor="#000000"
+        android:layout_marginTop="92dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="typeText"
+        android:ems="10"
+        android:id="@+id/type"
+        android:layout_alignBaseline="@+id/textView3"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignLeft="@+id/capacity"
+        android:layout_alignStart="@+id/capacity" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="capacityText"
+        android:ems="10"
+        android:id="@+id/capacity"
+        android:layout_marginLeft="47dp"
+        android:layout_marginStart="47dp"
+        android:layout_alignBaseline="@+id/textView4"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_toRightOf="@+id/textView4"
+        android:layout_toEndOf="@+id/textView4" />
 </RelativeLayout>

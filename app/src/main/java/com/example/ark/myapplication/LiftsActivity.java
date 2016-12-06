@@ -11,6 +11,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import android.widget.AdapterView.OnItemClickListener;
 
+
+
 import static com.example.ark.myapplication.R.id.liftsList;
 
 /**
