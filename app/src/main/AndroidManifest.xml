@@ -42,6 +42,7 @@
         <activity android:name=".InsertReviewActivity" />
         <activity android:name=".LodgesActivity" />
         <activity android:name=".RunsActivity" />
+        <activity android:name=".SingleRunActivity" />
         <activity android:name=".SingleLodgeActivity"></activity>
 
 
