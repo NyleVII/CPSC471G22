@@ -33,6 +33,8 @@
         <activity android:name=".SingleLiftActivity" />
         <activity android:name=".RentalsActivity" />
         <activity android:name=".SingleRentalActivity" />
+        <activity android:name=".PurchasablesActivity" />
+        <activity android:name=".SinglePurchasableActivity"/>
         <activity android:name=".InsertHillActivity" />
         <activity android:name=".InsertRegionActivity" />
         <activity android:name=".InsertLiftActivity" />
