@@ -36,18 +36,18 @@ public class InsertHillActivity extends AppCompatActivity {
         snowPack = snowPackText.getText().toString();
 
         try {
-            String query = "SELECT MAX(Hill_ID) FROM " + db + ".dbo.SkiHill";
+            String query = "SELECT MAX(Hill_ID) as maxHillID FROM " + db + ".dbo.SkiHill";
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if (rs.next()){
-                hill_id = rs.getInt("Hill_ID") + 1;
+                hill_id = rs.getInt("maxHillID") + 1;
             }
         }catch (SQLException e){
             e.printStackTrace();
         }
 
         try {
-            String query = "INSERT INTO" + db + ".dbo.SkiHill VALUES (" + hill_id + "," + hillName + "," + snowPack + ")";
+            String query = "INSERT INTO " + db + ".dbo.SkiHill VALUES (" + hill_id + "," + hillName + "," + snowPack + ")";
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(query);
         }catch (SQLException e){
