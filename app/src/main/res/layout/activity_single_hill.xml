@@ -64,24 +64,32 @@
         android:layout_alignStart="@+id/snowPack" />
 
     <Button
+        android:text="Reviews"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_below="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
         android:text="Regions"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="94dp"
+        android:id="@+id/button3"
+        android:onClick="openRegions"
         android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="89dp"
-        android:id="@+id/button3"
-        android:onClick="openRegions" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:text="Rentals"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:onClick="openRentals"
         android:layout_below="@+id/button3"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:id="@+id/button4"
-        android:onClick="openRentals" />
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
