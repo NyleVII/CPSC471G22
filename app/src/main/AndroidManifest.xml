@@ -39,8 +39,9 @@
         <activity android:name=".InsertRegionActivity" />
         <activity android:name=".InsertLiftActivity" />
         <activity android:name=".InsertRunActivity" />
-        <activity android:name=".InsertReviewActivity"></activity>
-        <activity android:name=".LodgesActivity"></activity>
+        <activity android:name=".InsertReviewActivity" />
+        <activity android:name=".LodgesActivity" />
+        <activity android:name=".RunsActivity" />
         <activity android:name=".SingleLodgeActivity"></activity>
 
 
