@@ -48,7 +48,7 @@ public class InsertHillActivity extends AppCompatActivity {
         }
 
         try {
-            String query = "INSERT INTO " + db + ".dbo.SkiHill VALUES ("+hill_id+","+"'"+hillName+"'"+","+"'"+snowPack+"'"+")";
+            String query = "INSERT INTO " + db + ".dbo.SkiHill VALUES (" + hill_id + "," + "'" + hillName + "'" + "," + "'" + snowPack + "'" + ")";
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(query);
         }catch (SQLException e){
