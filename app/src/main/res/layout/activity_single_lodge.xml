@@ -11,67 +11,73 @@
     tools:context="com.example.ark.myapplication.SingleRegionActivity">
 
     <Button
-        android:text="Lifts"
+        android:text="Food Menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="122dp"
         android:id="@+id/button6"
-        android:onClick="openLifts"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_below="@+id/textView3"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp" />
+        android:layout_marginTop="142dp" />
 
     <TextView
-        android:text="Single Region Activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:id="@+id/region"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:textStyle="normal|bold"
-        android:textSize="22sp"
-        android:textColor="#000000" />
-
-    <TextView
-        android:text="Weather"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="49dp"
-        android:id="@+id/textView3"
+        android:id="@+id/textView12"
         android:textSize="22sp"
         android:textStyle="normal|bold"
         android:textColor="#000000"
-        android:layout_below="@+id/region"
+        android:text="Available Seating"
+        android:layout_marginTop="25dp"
+        android:layout_below="@+id/lodge"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:textSize="22sp"
+        android:textStyle="normal|bold"
+        android:textColor="#000000"
+        android:text="Food Menu"
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/textView12" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Namew"
+        android:text="foodMenuText"
         android:ems="10"
-        android:id="@+id/weather"
-        android:layout_marginRight="24dp"
-        android:layout_marginEnd="24dp"
+        android:id="@+id/foodMenu"
         android:layout_alignBaseline="@+id/textView3"
         android:layout_alignBottom="@+id/textView3"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        android:text="Lodges"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:id="@+id/button3"
-        android:onClick="openLodges"
-        android:layout_below="@+id/button6"
-        android:layout_alignLeft="@+id/button6"
-        android:layout_alignStart="@+id/button6" />
+        android:inputType="textPersonName"
+        android:text="availableSeatingText"
+        android:ems="10"
+        android:id="@+id/availableSeating"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Single Lodge Activity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/lodge"
+        android:textStyle="normal|bold"
+        android:textSize="22sp"
+        android:textColor="#000000"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

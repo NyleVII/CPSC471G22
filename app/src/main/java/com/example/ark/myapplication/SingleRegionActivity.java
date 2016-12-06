@@ -83,5 +83,37 @@ public class SingleRegionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    public void openLodges(View view){
+        ArrayList<String> lodges = new ArrayList<String>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT Name FROM " + db + ".dbo.Lodges WHERE Hill_ID = " + hill_id + " AND RegionName = '" + regionName + "'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String Name = rs.getString("Name");
+
+                lodges.add(Name);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        Intent intent = new Intent(this, LodgesActivity.class);
+        intent.putExtra("lodges", lodges);
+        intent.putExtra("region", regionName);
+        intent.putExtra("Hill_ID",hill_id);
+        startActivity(intent);
+    }
+
 }
 
