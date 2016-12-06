@@ -36,10 +36,10 @@ public class HillsActivity extends AppCompatActivity {
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.hills_list, hills);
 
-        ListView listView = (ListView) findViewById(hillsList);
+        ListView listView = (ListView) findViewById(R.id.hillsList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(HillsActivity.this,SingleHillActivity.class);

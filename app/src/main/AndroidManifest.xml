@@ -28,11 +28,12 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".RegionsActivity" />
-        <activity android:name=".SingleRegionActivity"></activity>
-        <activity android:name=".LiftsActivity"></activity>
-        <activity android:name=".SingleLiftActivity"></activity>
-        <activity android:name=".RunsActivity"></activity>
-        <activity android:name=".SingleRunActivity"></activity>
+        <activity android:name=".SingleRegionActivity" />
+        <activity android:name=".LiftsActivity" />
+        <activity android:name=".SingleLiftActivity" />
+        <activity android:name=".RentalsActivity" />
+        <activity android:name=".SingleRentalActivity">
+        </activity>
     </application>
 
 </manifest>
