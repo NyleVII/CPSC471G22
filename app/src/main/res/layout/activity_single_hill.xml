@@ -38,31 +38,6 @@
         android:textColor="#000000"
         android:textStyle="normal|bold" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Snow Pack"
-        android:ems="10"
-        android:id="@+id/snowPack"
-        android:layout_alignTop="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_marginLeft="65dp"
-        android:layout_marginStart="65dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:id="@+id/hillName"
-        android:layout_alignBaseline="@+id/textView"
-        android:layout_alignBottom="@+id/textView"
-        android:layout_alignLeft="@+id/snowPack"
-        android:layout_alignStart="@+id/snowPack" />
-
     <Button
         android:text="Reviews"
         android:layout_width="wrap_content"
@@ -103,4 +78,26 @@
         android:layout_alignBottom="@+id/button4"
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/hillName"
+        android:layout_below="@+id/textView"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Snow Pack"
+        android:ems="10"
+        android:id="@+id/snowPack"
+        android:layout_below="@+id/textView2"
+        android:layout_alignRight="@+id/hillName"
+        android:layout_alignEnd="@+id/hillName" />
 </RelativeLayout>

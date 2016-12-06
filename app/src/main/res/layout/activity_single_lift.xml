@@ -42,32 +42,6 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="typeText"
-        android:ems="10"
-        android:id="@+id/type"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignLeft="@+id/capacity"
-        android:layout_alignStart="@+id/capacity" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="capacityText"
-        android:ems="10"
-        android:id="@+id/capacity"
-        android:layout_marginLeft="47dp"
-        android:layout_marginStart="47dp"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_toRightOf="@+id/textView4"
-        android:layout_toEndOf="@+id/textView4" />
-
     <Button
         android:text="Runs"
         android:layout_width="wrap_content"
@@ -78,4 +52,26 @@
         android:layout_below="@+id/textView4"
         android:layout_alignRight="@+id/textView4"
         android:layout_alignEnd="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="typeText"
+        android:ems="10"
+        android:id="@+id/type"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/button4"
+        android:layout_alignStart="@+id/button4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="capacityText"
+        android:ems="10"
+        android:id="@+id/capacity"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/textView4" />
 </RelativeLayout>
