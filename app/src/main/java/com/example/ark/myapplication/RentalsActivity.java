@@ -22,23 +22,23 @@ public class RentalsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         ArrayList<String> rentalNames = extras.getStringArrayList("rentalNames");
-        final ArrayList<Integer> hill_ids = extras.getIntegerArrayList("Hill_IDs");
+        final int hill_id = extras.getInt("Hill_ID");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.rentals_list, rentalNames);
 
         ListView listView = (ListView) findViewById(R.id.rentalsList);
         listView.setAdapter(adapter);
-/*
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(RentalsActivity.this,SingleHillActivity.class);
-                String hillName = ((TextView)view).getText().toString();
-                intent.putExtra("hillName",hillName);
-                intent.putExtra("Hill_ID",hill_ids.get(i));
+                Intent intent = new Intent(RentalsActivity.this,SingleRentalActivity.class);
+                String rentalName = ((TextView)view).getText().toString();
+                intent.putExtra("rentalName",rentalName);
+                intent.putExtra("Hill_ID",hill_id);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
     }

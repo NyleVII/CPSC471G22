@@ -39,7 +39,7 @@ public class HillsActivity extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.hillsList);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new OnItemClickListener(){
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(HillsActivity.this,SingleHillActivity.class);
