@@ -30,18 +30,7 @@
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editText" />
-
-    <TextView
-        android:text="Snow Pack:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/hillName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,7 +41,7 @@
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editText2" />
+        android:id="@+id/snowPack" />
 
     <Button
         android:text="Submit"
@@ -60,5 +49,18 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button10" />
+        android:id="@+id/button10"
+        android:onClick="insertHill" />
+
+    <TextView
+        android:text="Snow Pack:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_marginTop="34dp"
+        android:layout_below="@+id/hillName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>

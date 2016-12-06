@@ -53,5 +53,11 @@ public class HillsActivity extends AppCompatActivity {
 
     }
 
+    public void openInsertHill(View view){
+
+        Intent intent = new Intent(HillsActivity.this,InsertHillActivity.class);
+        startActivity(intent);
+    }
+
 
 }
