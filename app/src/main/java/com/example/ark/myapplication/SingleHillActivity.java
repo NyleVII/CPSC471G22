@@ -37,7 +37,7 @@ public class SingleHillActivity extends AppCompatActivity {
             if (rs.next()){
                 snowPack = rs.getString("SnowPack");
                 hillNameText.setText(hillName);
-                snowPackText.setText(snowPack);
+                snowPackText.setText(snowPack + "cm");
             }
         }catch (SQLException e){
             e.printStackTrace();
