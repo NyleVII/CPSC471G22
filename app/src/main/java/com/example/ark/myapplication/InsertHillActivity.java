@@ -1,5 +1,6 @@
 package com.example.ark.myapplication;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,11 +48,14 @@ public class InsertHillActivity extends AppCompatActivity {
         }
 
         try {
-            String query = "INSERT INTO " + db + ".dbo.SkiHill VALUES (" + hill_id + "," + hillName + "," + snowPack + ")";
+            String query = "INSERT INTO " + db + ".dbo.SkiHill VALUES ("+hill_id+","+"'"+hillName+"'"+","+"'"+snowPack+"'"+")";
             Statement stmt = conn.createStatement();
             stmt.executeUpdate(query);
         }catch (SQLException e){
             e.printStackTrace();
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
