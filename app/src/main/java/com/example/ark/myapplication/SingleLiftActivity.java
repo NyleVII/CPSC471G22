@@ -16,7 +16,7 @@ import android.content.Intent;
 
 public class SingleLiftActivity extends AppCompatActivity {
 
-    String regionName, liftName, db, runType, runCapacity;
+    String regionName, liftName, db, liftType, liftCapacity;
     int hill_id;
     Connection conn;
 
@@ -45,10 +45,10 @@ public class SingleLiftActivity extends AppCompatActivity {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if (rs.next()) {
-                runType = rs.getString("Type");
-                runCapacity = rs.getString("Capacity");
-                runTypeText.setText(runType);
-                runCapacityText.setText(runCapacity);
+                liftType = rs.getString("Type");
+                liftCapacity = rs.getString("Capacity");
+                runTypeText.setText(liftType);
+                runCapacityText.setText(liftCapacity);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -56,5 +56,41 @@ public class SingleLiftActivity extends AppCompatActivity {
 
     }
 
+
+
+    public void openRuns(View view){
+        ArrayList<String> runs = new ArrayList<String>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT Name FROM " + db + ".dbo.Runs WHERE Hill_ID = " + hill_id + " AND RegionName = '" + regionName + "' AND LiftName = '" + liftName + "'";
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String Name = rs.getString("Name");
+
+                runs.add(Name);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        Intent intent = new Intent(this, RunsActivity.class);
+        intent.putExtra("runs", runs);
+        intent.putExtra("lift", liftName);
+        intent.putExtra("region", regionName);
+        intent.putExtra("Hill_ID",hill_id);
+        startActivity(intent);
+    }
+
 }
+
+
 

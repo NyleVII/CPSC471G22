@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
+
 public class HillsActivity extends AppCompatActivity {
     int id;
     ArrayList<Integer> ids = new ArrayList<Integer>();
