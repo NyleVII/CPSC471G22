@@ -20,7 +20,7 @@ public class SingleLodgeActivity extends AppCompatActivity {
     String regionName, lodgeName, db, availableSeating, foodMenu;
     int hill_id;
     Connection conn;
-
+    int i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
