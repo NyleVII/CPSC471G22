@@ -104,4 +104,34 @@ public class SingleHillActivity extends AppCompatActivity {
         intent.putExtra("Hill_ID",hill_id);
         startActivity(intent);
     }
+
+    public void openPurchasables(View view){
+        ArrayList<String> purchNames = new ArrayList<String>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT Name,Type,Price FROM " + db + ".dbo.Purchasable WHERE Hill_ID=" + hill_id;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String purchName = rs.getString("Name");
+
+                purchNames.add(purchName);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        Intent intent = new Intent(this, PurchasablesActivity.class);
+        intent.putExtra("purchasableNames", purchNames);
+        intent.putExtra("Hill_ID",hill_id);
+        startActivity(intent);
+    }
 }
