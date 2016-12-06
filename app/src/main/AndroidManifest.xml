@@ -32,8 +32,8 @@
         <activity android:name=".LiftsActivity" />
         <activity android:name=".SingleLiftActivity" />
         <activity android:name=".RentalsActivity" />
-        <activity android:name=".SingleRentalActivity">
-        </activity>
+        <activity android:name=".SingleRentalActivity"></activity>
+        <activity android:name=".PurchasablesActivity"></activity>
     </application>
 
 </manifest>
