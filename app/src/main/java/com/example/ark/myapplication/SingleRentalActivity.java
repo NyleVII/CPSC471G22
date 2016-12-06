@@ -31,7 +31,7 @@ public class SingleRentalActivity extends AppCompatActivity {
 
 
         try {
-            String query = "SELECT Name,Type,Price FROM " + db + ".dbo.Rental WHERE Name='" + rentalName + "' AND Hill_ID='" + hill_id +"'";
+            String query = "SELECT Name,Type,Price FROM " + db + ".dbo.Rental WHERE Name='" + rentalName + "' AND Hill_ID=" + hill_id;
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if (rs.next()){
