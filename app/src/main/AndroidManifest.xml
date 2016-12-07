@@ -34,7 +34,7 @@
         <activity android:name=".RentalsActivity" />
         <activity android:name=".SingleRentalActivity" />
         <activity android:name=".PurchasablesActivity" />
-        <activity android:name=".SinglePurchasableActivity"/>
+        <activity android:name=".SinglePurchasableActivity" />
         <activity android:name=".InsertHillActivity" />
         <activity android:name=".InsertRegionActivity" />
         <activity android:name=".InsertLiftActivity" />
@@ -43,9 +43,9 @@
         <activity android:name=".LodgesActivity" />
         <activity android:name=".RunsActivity" />
         <activity android:name=".SingleRunActivity" />
-        <activity android:name=".SingleLodgeActivity"></activity>
-
-
+        <activity android:name=".SingleLodgeActivity" />
+        <activity android:name=".ReviewsActivity" />
+        <activity android:name=".SingleReviewActivity"></activity>
     </application>
 
 </manifest>

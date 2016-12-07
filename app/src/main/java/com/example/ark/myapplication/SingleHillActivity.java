@@ -112,7 +112,7 @@ public class SingleHillActivity extends AppCompatActivity {
             //Inserting into the database with db = database name
             //dbo.names is the table name
             //standard format for accessing the sql server provided through Tamer is the following
-            String query = "SELECT Name,Type,Price FROM " + db + ".dbo.Purchasable WHERE Hill_ID=" + hill_id;
+            String query = "SELECT Name FROM " + db + ".dbo.Purchasable WHERE Hill_ID=" + hill_id;
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
 
@@ -133,5 +133,63 @@ public class SingleHillActivity extends AppCompatActivity {
         intent.putExtra("purchasableNames", purchNames);
         intent.putExtra("Hill_ID",hill_id);
         startActivity(intent);
+    }
+
+    public void openReviews(View view){
+        ArrayList<String> starRatings = new ArrayList<String>(); //hills array for sending to the hills activity
+        ArrayList<Integer> reviewIds = new ArrayList<Integer>(); //hills array for sending to the hills activity
+
+        try {
+            //Inserting into the database with db = database name
+            //dbo.names is the table name
+            //standard format for accessing the sql server provided through Tamer is the following
+            String query = "SELECT ReviewID, StarRating FROM " + db + ".dbo.Reviews WHERE Hill_ID=" + hill_id;
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+
+            int i = 0;
+            while (rs.next()) {
+                String starRating = rs.getString("StarRating");
+                Integer reviewId = rs.getInt("ReviewID");
+
+                reviewIds.add(reviewId);
+                starRatings.add(starRating);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        Intent intent = new Intent(this, ReviewsActivity.class);
+        intent.putExtra("reviewIds", reviewIds);
+        intent.putExtra("starRatings", starRatings);
+        intent.putExtra("Hill_ID",hill_id);
+        startActivity(intent);
+    }
+
+    public void deleteHill(View view) {
+        if (hillName.equals("Sunshine") ||
+                hillName.equals("Nakiska") ||
+                hillName.equals("Fernie") ||
+                hillName.equals("LakeLouise") ||
+                hillName.equals("Kimberley") ||
+                hillName.equals("terror")) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        } else {
+
+            try {
+                String query = "DELETE FROM " + db + ".dbo.SkiHill WHERE Hill_ID=" + hill_id;
+                Statement stmt = conn.createStatement();
+                stmt.executeUpdate(query);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 }

@@ -45,7 +45,8 @@
         android:id="@+id/button5"
         android:layout_below="@+id/button4"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:onClick="openReviews" />
 
     <Button
         android:text="Regions"
@@ -100,4 +101,13 @@
         android:layout_below="@+id/textView2"
         android:layout_alignRight="@+id/hillName"
         android:layout_alignEnd="@+id/hillName" />
+
+    <Button
+        android:text="Delete Hill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/button11"
+        android:onClick="deleteHill" />
 </RelativeLayout>
