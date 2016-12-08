@@ -53,6 +53,7 @@ public class SingleLodgeActivity extends AppCompatActivity {
                 availableSeating = String.valueOf(rs.getInt("AvailableSeating"));
                // foodMenu = rs.getString("FoodMenu");
 
+                lodgeTag.setText(lodgeName);
                 availableSeatingText.setText(availableSeating);
                 //foodMenuText.setText(foodMenu);
             }
