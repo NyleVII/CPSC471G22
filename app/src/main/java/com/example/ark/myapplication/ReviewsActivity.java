@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 public class ReviewsActivity extends AppCompatActivity {
 
+    int hill_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +23,7 @@ public class ReviewsActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         ArrayList<String> starRatings = extras.getStringArrayList("starRatings");
         final ArrayList<Integer> reviewIds = extras.getIntegerArrayList("reviewIds");
-        final int hill_id = extras.getInt("Hill_ID");
+        hill_id = extras.getInt("Hill_ID");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.reviews_list, starRatings);
 
@@ -37,5 +39,12 @@ public class ReviewsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void openInsertReview(View view){
+
+        Intent intent = new Intent(this,InsertReviewActivity.class);
+        intent.putExtra("Hill_ID", hill_id);
+        startActivity(intent);
     }
 }

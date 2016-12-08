@@ -15,5 +15,15 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_above="@+id/insertReviewButton"
         android:id="@+id/reviewsList"/>
+
+    <Button
+        android:text="Insert Review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/insertReviewButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="openInsertReview" />
 </RelativeLayout>
