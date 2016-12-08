@@ -19,7 +19,8 @@
         android:textStyle="normal|bold"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -30,18 +31,7 @@
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editText" />
-
-    <TextView
-        android:text="Weather:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        android:textSize="24sp"
-        android:textStyle="normal|bold"
-        android:layout_below="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/regionName" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -52,7 +42,7 @@
         android:layout_below="@+id/textView9"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:id="@+id/editText2" />
+        android:id="@+id/weather" />
 
     <Button
         android:text="Submit"
@@ -60,5 +50,19 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:id="@+id/button9" />
+        android:id="@+id/button9"
+        android:onClick="insertRegion" />
+
+    <TextView
+        android:text="Weather:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView9"
+        android:textSize="24sp"
+        android:textStyle="normal|bold"
+        android:layout_below="@+id/regionName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:textColor="#000000" />
 </RelativeLayout>

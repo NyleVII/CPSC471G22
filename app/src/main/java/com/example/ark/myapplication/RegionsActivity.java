@@ -15,7 +15,7 @@ import static com.example.ark.myapplication.R.id.hillsList;
 import static com.example.ark.myapplication.R.id.regionsList;
 
 public class RegionsActivity extends AppCompatActivity {
-
+    int hill_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class RegionsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         ArrayList<String> regions = extras.getStringArrayList("regions");
-        final int hill_id = extras.getInt("Hill_ID");
+        hill_id = extras.getInt("Hill_ID");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.regions_list, regions);
 
@@ -42,5 +42,12 @@ public class RegionsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void openInsertRegion(View view){
+
+        Intent intent = new Intent(this,InsertRegionActivity.class);
+        intent.putExtra("Hill_ID", hill_id);
+        startActivity(intent);
     }
 }
