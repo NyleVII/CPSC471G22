@@ -47,4 +47,5 @@ public class ReviewsActivity extends AppCompatActivity {
         intent.putExtra("Hill_ID", hill_id);
         startActivity(intent);
     }
+
 }

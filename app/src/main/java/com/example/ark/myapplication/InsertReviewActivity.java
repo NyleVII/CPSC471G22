@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,11 +17,15 @@ public class InsertReviewActivity extends AppCompatActivity {
     String db;
     Connection conn;
     int hill_id, review_id;
+    TextView starRatingText, reviewText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_review);
+
+        starRatingText = (TextView) findViewById(R.id.starRating);
+        reviewText = (TextView) findViewById(R.id.reviewText);
 
         Bundle extras = getIntent().getExtras();
         hill_id = extras.getInt("Hill_ID");
@@ -31,8 +37,10 @@ public class InsertReviewActivity extends AppCompatActivity {
         String starRatingString, review;
         int starRating;
 
-        TextView starRatingText = (TextView) findViewById(R.id.starRating);
-        TextView reviewText = (TextView) findViewById(R.id.reviewText);
+
+
+        starRatingText = (TextView) findViewById(R.id.starRating);
+        reviewText = (TextView) findViewById(R.id.reviewText);
 
         starRatingString = starRatingText.getText().toString();
         starRating = Integer.parseInt(starRatingString);
@@ -60,4 +68,5 @@ public class InsertReviewActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+
 }

@@ -65,4 +65,14 @@ public class SingleReviewActivity extends AppCompatActivity {
             startActivity(intent);
 
     }
+
+    public void openEditReview(View view){
+
+        Intent intent = new Intent(this, EditReviewActivity.class);
+        intent.putExtra("currentRating", starRating);
+        intent.putExtra("currentReview", reviewText);
+        intent.putExtra("ReviewID", reviewId);
+        startActivity(intent);
+
+    }
 }

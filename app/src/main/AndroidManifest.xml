@@ -45,7 +45,8 @@
         <activity android:name=".SingleRunActivity" />
         <activity android:name=".SingleLodgeActivity" />
         <activity android:name=".ReviewsActivity" />
-        <activity android:name=".SingleReviewActivity"></activity>
+        <activity android:name=".SingleReviewActivity" />
+        <activity android:name=".EditReviewActivity"></activity>
     </application>
 
 </manifest>
