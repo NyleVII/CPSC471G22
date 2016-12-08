@@ -174,8 +174,7 @@ public class SingleHillActivity extends AppCompatActivity {
                 hillName.equals("Nakiska") ||
                 hillName.equals("Fernie") ||
                 hillName.equals("LakeLouise") ||
-                hillName.equals("Kimberley") ||
-                hillName.equals("terror")) {
+                hillName.equals("Kimberley")){
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         } else {
