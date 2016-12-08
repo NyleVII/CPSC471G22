@@ -21,7 +21,8 @@ import static com.example.ark.myapplication.R.id.liftsList;
 
 
     public class LiftsActivity extends AppCompatActivity {
-
+        String region;
+        int hill_id;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +31,8 @@ import static com.example.ark.myapplication.R.id.liftsList;
 
             Bundle extras = getIntent().getExtras();
             ArrayList<String> lifts = extras.getStringArrayList("lifts");
-            final String region =  extras.getString("region");
-            final int hill_id = extras.getInt("Hill_ID");
+            region =  extras.getString("region");
+            hill_id = extras.getInt("Hill_ID");
 
             ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.lifts_list, lifts);
 
@@ -51,6 +52,16 @@ import static com.example.ark.myapplication.R.id.liftsList;
             });
 
         }
+        public void openInsertLift(View view){
+
+            Intent intent = new Intent(this,InsertLiftActivity.class);
+            intent.putExtra("Hill_ID", hill_id);
+            intent.putExtra("region", region);
+            startActivity(intent);
+
+        }
+
+
     }
 
 
