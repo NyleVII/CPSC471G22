@@ -115,5 +115,20 @@ public class SingleRegionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void deleteRegion(View view) {
+
+
+        try {
+            String query = "DELETE FROM " + db + ".dbo.Regions WHERE Hill_ID=" + hill_id + "AND Name='" + regionName + "'";
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
 
