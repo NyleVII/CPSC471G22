@@ -57,4 +57,20 @@ public class SingleRunActivity extends AppCompatActivity {
         }
     }
 
+    public void deleteRun(View view) {
+
+
+        try {
+            String query = "DELETE FROM " + db + ".dbo.Runs WHERE Hill_ID=" + hill_id + "AND Name='" + runName +
+                    "' AND RegionName='" + regionName + "' AND LiftName='" + liftName + "'";
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
