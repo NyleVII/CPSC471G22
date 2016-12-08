@@ -90,6 +90,22 @@ public class SingleLiftActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void deleteLift(View view) {
+
+
+        try {
+            String query = "DELETE FROM " + db + ".dbo.Lifts WHERE Hill_ID=" + hill_id + "AND Name='" + liftName +
+                    "' AND RegionName='" + regionName + "'";
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
 }
 
 
