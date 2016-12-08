@@ -170,25 +170,17 @@ public class SingleHillActivity extends AppCompatActivity {
     }
 
     public void deleteHill(View view) {
-        if (hillName.equals("Sunshine") ||
-                hillName.equals("Nakiska") ||
-                hillName.equals("Fernie") ||
-                hillName.equals("LakeLouise") ||
-                hillName.equals("Kimberley")){
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
-        } else {
 
-            try {
-                String query = "DELETE FROM " + db + ".dbo.SkiHill WHERE Hill_ID=" + hill_id;
-                Statement stmt = conn.createStatement();
-                stmt.executeUpdate(query);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-
-            Intent intent = new Intent(this, MainActivity.class);
-            startActivity(intent);
+        try {
+            String query = "DELETE FROM " + db + ".dbo.SkiHill WHERE Hill_ID=" + hill_id;
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
+
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+
     }
 }
