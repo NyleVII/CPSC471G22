@@ -19,6 +19,9 @@ import static com.example.ark.myapplication.R.id.runsList;
 
 public class RunsActivity extends AppCompatActivity {
 
+    String lift, region;
+    int hill_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,9 +29,9 @@ public class RunsActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         ArrayList<String> runs = extras.getStringArrayList("runs");
-        final String lift = extras.getString("lift");
-        final String region =  extras.getString("region");
-        final int hill_id = extras.getInt("Hill_ID");
+        lift = extras.getString("lift");
+        region =  extras.getString("region");
+        hill_id = extras.getInt("Hill_ID");
 
         ArrayAdapter adapter = new ArrayAdapter<String>(this,R.layout.runs_list, runs);
 
@@ -47,6 +50,16 @@ public class RunsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    public void openInsertRun(View view){
+        Intent intent = new Intent(this,InsertRunActivity.class);
+        intent.putExtra("Hill_ID", hill_id);
+        intent.putExtra("region", region);
+        intent.putExtra("lift", lift);
+        startActivity(intent);
+
 
     }
 
